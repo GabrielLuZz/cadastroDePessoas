@@ -1,7 +1,7 @@
-import { Pessoa } from "./models/Pessoa.js";
-import { Lista } from "./models/lista.js";
-import { Filtro } from "./models/filtro.js";
-import { Validador } from "./models/Validador.js";
+import { Pessoa } from "src/models/Pessoa.js";
+import { Lista } from "src/models/lista.js";
+import { Filtro } from "src/models/filtro.js";
+import { Validador } from "src/models/Validador.js";
 
 let ul = document.querySelector('#lista-de-alunos');
 let cadastrar = document.querySelector('.validado');
