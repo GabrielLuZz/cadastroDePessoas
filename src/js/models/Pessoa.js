@@ -1,7 +1,7 @@
 export class Pessoa {
     constructor(nome, sobrenome, nascimento, email, contato, telefone, cargo) {
         this.nome = nome.slice(0, 1).toUpperCase() + nome.slice(1);
-        this.sobrenome = sobrenome.slice(0, 1).toUpperCase() + sobrenome.slice(1);;
+        this.sobrenome = sobrenome.slice(0, 1).toUpperCase() + sobrenome.slice(1);
         this._nascimento = nascimento;
         this._email = email;
         this._contato = contato;
