@@ -1,10 +1,10 @@
 
 console.log('oi');
 
-import { Pessoa } from "/src/models/Pessoa.js";
-import { Lista } from "/src/models/Lista.js";
-import { Filtro } from "/src/models/Filtro.js";
-import { Validador } from "/src/models/Validador.js";
+import { Pessoa } from "./models/Pessoa.js";
+import { Lista } from "./models/Lista.js";
+import { Filtro } from "./models/Filtro.js";
+import { Validador } from "./models/Validador.js";
 
 let ul = document.querySelector('#lista-de-alunos');
 let cadastrar = document.querySelector('.validado');
