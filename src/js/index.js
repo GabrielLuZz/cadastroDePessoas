@@ -1,6 +1,3 @@
-
-console.log('oi');
-
 import { Pessoa } from "./models/Pessoa.js";
 import { Lista } from "./models/Lista.js";
 import { Filtro } from "./models/Filtro.js";
