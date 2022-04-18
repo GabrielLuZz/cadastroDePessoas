@@ -8,59 +8,91 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./assets//css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
     <title>Cadastro de Pessoas</title>
 </head>
 
 <body>
+
     <main>
-        <form>
-            <img src="./assets/img/LOGO.png" alt="Logo" />
+        <form class="validado">
+            <img src="./src/img/LOGO.png" alt="Logo" />
             <h2>Cadastro</h2>
 
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" placeholder="Nome" class="field" />
+            <label>
+                <span>Nome</span>
+                <input type="text" name="nome" placeholder="Nome" class="field" data-rules="required|min=2" />
+            </label>
 
-            <label for="sobrenome">Sobrenome</label>
-            <input type="text" name="sobrenome" placeholder="Sobrenome" class="field" />
+            <label>
+                <span>Sobrenome</span>
+                <input type="text" name="sobrenome" placeholder="Sobrenome" class="field" data-rules="required|min=2" />
+            </label>
 
-            <label for="data-nascimento">Data de nascimento</label>
-            <input type="date" name="dataNascimento" class="field" />
+            <label>
+                <span>Data de nascimento</span>
+                <input type="date" name="dataNascimento" class="field" data-rules="required"/>
+            </label>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Email" class="field" />
+            <label>
+                <span>Email</span>
+                <input type="email" name="email" placeholder="Email" class="field" data-rules="required|email" />
+            </label>
 
-            <label for="contato">Contato</label>
-            <input type="text" name="contato" placeholder="Contato" class="field" />
+            <label>
+                <span>Contato</span>
+                <input type="text" name="contato" placeholder="Contato" class="field" />
+            </label>
 
-            <label for="telefone">Telefone</label>
-            <input type="tel" name="telefone" placeholder="Telefone" class="field" />
+            <label>
+                <span>Telefone</span>
+                <input type="tel" name="telefone" placeholder="Telefone" class="field" />
+            </label>
 
             <label for="cargo">Cargo</label>
             <select name="cargo" class="field">
-          <option value="Aluno">Aluno</option>
-          <option value="Facilitador">Facilitador</option>
-          <option value="Instrutor">Instrutor</option>
-        </select>
+                <option value="Aluno">Aluno</option>
+                <option value="Facilitador">Facilitador</option>
+                <option value="Instrutor">Instrutor</option>
+            </select>
 
             <button id="register-button">Cadastrar</button>
         </form>
     </main>
     <aside>
+
+        <div class="avisos">
+        </div>
+
+
         <h3>Total de cadastrados: <span id="total-alunos"></span></h3>
         <div>
             <select id="cargoOption">
-          <option value="Todos">Todos</option>
-          <option value="Aluno">Aluno</option>
-          <option value="Facilitador">Facilitador</option>
-          <option value="Instrutor">Instrutor</option>
-        </select>
+                <option value="Todos">Todos</option>
+                <option value="Aluno">Aluno</option>
+                <option value="Facilitador">Facilitador</option>
+                <option value="Instrutor">Instrutor</option>
+            </select>
             <button id="btn">Pesquisar</button>
         </div>
         <ul id="lista-de-alunos"></ul>
     </aside>
-    <script src="assets/js/script.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script type="module" src="src/js/index.js"></script>
+    <script>
+        IMask(
+            document.querySelector('input[name="contato"]'), {
+                mask: '(00)0000-0000'
+            }
+        )
+
+        IMask(
+            document.querySelector('input[name="telefone"]'), {
+                mask: '(00)0000-0000'
+            }
+        )
+    </script>
 </body>
 
 </html>
